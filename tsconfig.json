@@ -1,0 +1,45 @@
+{
+    "compilerOptions": {
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "outDir": "./build/",
+      "noImplicitAny": true,
+      "target": "ES2024",
+      "module": "esnext",
+      "moduleResolution": "node",
+      "sourceMap": true,
+      "allowJs": true,
+      "resolveJsonModule": true,
+      "allowSyntheticDefaultImports": true,
+      "lib": [
+        "es2024",
+        "dom",
+        "esnext"
+      ],
+      "noImplicitReturns": true,
+      "noImplicitThis": true,
+      "noUnusedLocals": false,
+      "strictNullChecks": true,
+      "strict": true,
+      "pretty": true,
+      "baseUrl": ".",
+      "paths": {
+        "@/*": [
+          "./*"
+        ]
+      },
+      "plugins": [
+        {
+          "name": "typescript-eslint"
+        }
+      ]
+    },
+    "exclude": [
+      "node_modules",
+      "build",
+      "scripts",
+      "acceptance-tests",
+      "webpack",
+      "jest",
+    ]
+  }
