@@ -5,7 +5,7 @@
     "main": "build/bundle.js",
     "scripts": {
         "start:watch:dev": "npm-run-all --parallel watch:server watch:dev",
-        "start:watch:prod": "npm-run-all --parallel watch:server watch:dev",
+        "start:watch:prod": "npm-run-all --parallel watch:server watch:prod",
         "build:dev": "webpack --mode development --env entrySource=index.ts --config webpack.config.js --env path=.env",
         "build:prod": "webpack --mode production --env entrySource=index.ts --config webpack.config.js --env path=.env",
         "watch:dev": "webpack --watch --mode development --env entrySource=index.ts --env path=./.env",
@@ -44,7 +44,8 @@
         "tsconfig-paths-webpack-plugin": "^3.0.3",
         "@typescript-eslint/eslint-plugin": "^5.59.11",
         "@typescript-eslint/parser": "^5.59.11",
-        "@babel/preset-typescript": "^7.27.0"
+        "@babel/preset-typescript": "^7.27.0",
+        "npm-run-all2": "7.0.2"
         
     }
 }
