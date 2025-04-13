@@ -4,6 +4,6 @@ export default interface Task {
     _id: mongoose.Types.ObjectId;
     title: String,
     description: String,
-    dateTime: Date,
+    dateTime: String,
     completed: Boolean,
   }

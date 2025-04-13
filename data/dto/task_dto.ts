@@ -4,6 +4,6 @@ export default interface TaskDTO {
     _id?: mongoose.Types.ObjectId,
     title: string;
     description: string;
-    dateTime?: Date;
+    dateTime?: String;
     completed?: boolean;
 }

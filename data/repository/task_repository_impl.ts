@@ -25,7 +25,6 @@ export default class TaskRepositoryImpl implements TaskRepository {
       await session.commitTransaction();
       return ResultSuccess(tasks);
     } catch(e) {
-      console.error(e);
       await session.abortTransaction();
       return ResultError(e);
     } finally {
@@ -54,7 +53,6 @@ export default class TaskRepositoryImpl implements TaskRepository {
       await session.commitTransaction();
       return ResultSuccess(tasks);
     } catch(e) {
-      console.error(e);
       await session.abortTransaction();
       return ResultError(e);
     } finally {
@@ -86,9 +84,11 @@ export default class TaskRepositoryImpl implements TaskRepository {
         acc[key] = isBoolean(curr)  || key === '_id'? curr : { $regex: curr, $options: 'i' };
         return acc;
       }, {});
+      console.log(formatParams);
       const tasks = await this.taskCollection.find(formatParams);
       return ResultSuccess(tasks);
     } catch (e) {
+      console.error(e);
       return ResultError(e);
     }
   }
