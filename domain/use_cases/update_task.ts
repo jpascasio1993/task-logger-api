@@ -13,7 +13,7 @@ export default class UpdateTask implements UseCase<UpdateTaskParams, BulkWriteRe
     async execute(params: UpdateTaskParams): Promise<Response<BulkWriteResult>> {
         const res = await this.taskRepository.updateTask(params);
         if (!res.isSuccess) {
-            return ResponseError({ title: 'Update Tasks', message: 'Failed to update tasks', error: res.error! });
+            return ResponseError({ title: 'Update Tasks', message: res.error['message'] || 'Failed to update tasks', error: res.error! });
         }
         return ResponseSuccess({
             title: 'Update Tasks',

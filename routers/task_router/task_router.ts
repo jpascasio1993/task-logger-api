@@ -14,7 +14,7 @@ router.get('/tasks', async (req: Request<GetTaskParams, any, any, any>, res: Res
         next();
         return;
     }
-    res.status(500).json(response);
+    res.status(200).json(response);
     next();
 });
 
@@ -26,7 +26,7 @@ router.post('/tasks', async (req: Request<CreateTaskParams, any, any, any>, res:
         next();
         return;
     }
-    res.status(500).json(response);
+    res.status(200).json(response);
     next();
 });
 
@@ -38,7 +38,7 @@ router.put('/tasks', async (req: Request<UpdateTaskParams, any, any, any>, res: 
         next();
         return;
     }
-    res.status(500).json(response);
+    res.status(200).json(response);
     next();
 });
 
@@ -50,7 +50,7 @@ router.delete('/tasks', async (req: Request<DeleteTaskParams, any, any, any>, re
         next();
         return;
     }
-    res.status(500).json(response);
+    res.status(200).json(response);
     next();
 });
 export default router;

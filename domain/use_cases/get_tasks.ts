@@ -12,7 +12,7 @@ export default class GetTask implements UseCase<GetTaskParams, Task[]> {
     async execute(params: GetTaskParams): Promise<Response<Task[]>> {
       const res = await this.taskRepository.getTasks(params);
       if(!res.isSuccess) {
-        return ResponseError({title: 'Get Tasks', message: 'Failed to retrieve tasks', error: res.error!});
+        return ResponseError({title: 'Get Tasks', message: res.error['message'] || 'Failed to retrieve tasks', error: res.error!});
       }
       return ResponseSuccess({
         title: 'Get Tasks',

@@ -13,7 +13,7 @@ export default class CreateTasks implements UseCase<CreateTaskParams, Task[]> {
     async execute(params: CreateTaskParams): Promise<Response<Task[]>> {
         const res = await this.taskRepository.createTasks(params);
         if (!res.isSuccess) {
-            return ResponseError({ title: 'Create Tasks', message: 'Failed to create tasks', error: res.error! });
+            return ResponseError({ title: 'Create Tasks', message: res.error['message'] || 'Failed to create tasks', error: res.error! });
         }
         return ResponseSuccess({
             title: 'Create Tasks',

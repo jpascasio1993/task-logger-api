@@ -15,7 +15,7 @@ export default class DeleteTasks implements UseCase<DeleteTaskParams, DeleteResu
     async execute(params: DeleteTaskParams): Promise<Response<DeleteResult>> {
         const res = await this.taskRepository.deleteTask(params);
         if (!res.isSuccess) {
-            return ResponseError({ title: 'Delete Tasks', message: 'Failed to delete tasks', error: res.error! });
+            return ResponseError({ title: 'Delete Tasks', message: res.error['message'] || 'Failed to delete tasks', error: res.error! });
         }
         return ResponseSuccess({
             title: 'Delete Tasks',
