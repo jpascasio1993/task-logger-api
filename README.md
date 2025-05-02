@@ -1,5 +1,6 @@
 # Task Logger API
-Task Logging API that handles creation, updating, deleting, and retrieving all tasks
+
+Task Logging API that handles creation, updating, deleting, and retrieving all tasks. The production build is currently hosted in AWS EC2.
 
 ## Prerequisites
 
@@ -11,7 +12,7 @@ Task Logging API that handles creation, updating, deleting, and retrieving all t
 This project includes `.env` in the repository since this is just an exercise.
 
 **Running the API**
-Run the following command to start up the API
+Run the following command to start up the API locally
 
 ```sh
     # install the dependencies
