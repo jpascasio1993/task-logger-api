@@ -12,6 +12,7 @@ Task Logging API that handles creation, updating, deleting, and retrieving all t
 This project includes `.env` in the repository since this is just an exercise.
 
 **Running the API**
+
 Run the following command to start up the API locally
 
 ```sh
