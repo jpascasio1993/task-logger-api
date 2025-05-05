@@ -13,7 +13,9 @@ This project includes `.env` in the repository since this is just an exercise.
 
 **Running the API**
 
-Run the following command to start up the API locally
+Run the following command to start up the API locally.
+Note: To have mongodb connection successfully run or establish, I must add your
+IP address in IP Access List. To save ourselves from the hassle, I have already publish and hosted the API in AWS EC2.
 
 ```sh
     # install the dependencies
